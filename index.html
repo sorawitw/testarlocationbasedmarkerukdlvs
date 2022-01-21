@@ -6,26 +6,30 @@
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     </head>
 
     <body style="margin: 0; overflow: hidden;">
         <a-scene
+            renderer="logarithmicDepthBuffer: true;"
             embedded
             loading-screen="enabled: false;"
             arjs="sourceType: webcam; debugUIEnabled: false;"
         >
-                <a-image
-                    src="assets/asset.jpeg"
+            <a-assets>
+                <a-asset-item
+                    id="animated-asset"
+                    src="assets/asset.gltf"
+                ></a-asset-item>
+            </a-assets>
+
+                <a-entity
                     look-at="[gps-camera]"
-                    scale="1 1 1"
-                    gps-entity-place="latitude: 13.687969669666156; longitude: 100.29605214263438;"
-                ></a-image>
-                <a-image
-                    src="assets/asset.jpeg"
-                    look-at="[gps-camera]"
-                    scale="1 1 1"
-                    gps-entity-place="latitude: 13.688120819424329; longitude: 100.29496584805251;"
-                ></a-image>
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset"
+                    scale="0.05907545722941957 0.05907545722941957 0.05907545722941957"
+                    gps-entity-place="latitude: 13.687970700098788; longitude: 100.29605631954689;"
+                ></a-entity>
 
             <a-camera gps-camera rotation-reader></a-camera>
         </a-scene>
