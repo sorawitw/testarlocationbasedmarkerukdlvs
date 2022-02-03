@@ -9,9 +9,9 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
-    <a-scene vr-mode-ui="enabled: false;" loading-screen="enabled: false;" arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 0.9;" id="scene" embedded gesture-detector>
+    <a-scene vr-mode-ui="enabled: false;" loading-screen="enabled: false;" arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; patternRatio: 1;" id="scene" embedded gesture-detector>
         <a-marker id="animated-marker" type="pattern" preset="custom" url="assets/test.patt" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="markerA">
-            <a-image src="assets/mac.jpeg" scale="2 1 1" class="clickable" rotation="-90 0 0" gesture-handler></a-image>
+            <a-image src="assets/dog.png" scale="2 1 1" class="clickable" rotation="-90 0 0" gesture-handler></a-image>
         </a-marker>
 
         <a-entity camera></a-entity>
