@@ -12,9 +12,10 @@
     <!-- https://sorawitw.github.io/testarlocationbasedmarkerukdlvs/targets_test.mind; -->
     <a-scene mindar-image="imageTargetSrc: https://sorawitw.github.io/testarlocationbasedmarkerukdlvs/targets_demo_nangyai_crop.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets>
-            <img id="card" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/card.png" />
+            <!-- <img id="card" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/card.png" />
             <a-asset-item id="avatarModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/card-example/softmind/scene.gltf"></a-asset-item>
-            <a-asset-item id="bearModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/band-example/bear/scene.gltf"></a-asset-item>
+            <a-asset-item id="bearModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/examples/image-tracking/assets/band-example/bear/scene.gltf"></a-asset-item> -->
+            <video id="vid" src="assets/05_AdobeCreativeCloudExpress.mp4" preload="auto" response-type="arraybuffer" loop crossorigin webkit-playsinline autoplay muted playsinline></video>
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -25,7 +26,8 @@
         </a-entity> -->
         <!-- scale="0.05 0.05 0.05" -->
         <a-entity mindar-image-target="targetIndex: 0">
-            <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.1 0.1 0.1" src="#bearModel" animation-mixer>
+            <!-- <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.1 0.1 0.1" src="#bearModel" animation-mixer> -->
+            <a-video src="#vid" scale="1 1 1" position="0 0.1 0" rotation="-90 0 0" transparent></a-video>
         </a-entity>
     </a-scene>
 </body>
