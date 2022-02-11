@@ -4,8 +4,9 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image.prod.js"></script>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.0.0/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
     <script>
         AFRAME.registerComponent('videohandler', {
             init: function() {
@@ -46,7 +47,8 @@
         <!-- scale="0.05 0.05 0.05" -->
         <a-entity mindar-image-target="targetIndex: 0">
             <!-- <a-gltf-model rotation="0 0 0 " position="0 -0.25 0" scale="0.1 0.1 0.1" src="#bearModel" animation-mixer> -->
-            <a-video src="#vid" scale="1 1 1" position="0 0.1 0" rotation="0 0 0" transparent videohandler></a-video>
+            <!-- <a-video src="#vid" scale="1 1 1" position="0 0.1 0" rotation="0 0 0" transparent videohandler></a-video> -->
+            <a-video material="shader: chromakey; src: #vid; color: 0.1 0.9 0.2" scale="1 1 1" position="0 0.1 0" rotation="0 0 0" transparent videohandler></a-video>
         </a-entity>
     </a-scene>
 </body>
